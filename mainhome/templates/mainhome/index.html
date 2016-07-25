@@ -1,0 +1,154 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CrashCourseYou</title>
+		<!-- Loading the font -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<!-- Latest compiled and minified Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- Sementic UI CDN -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.2/semantic.min.css" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="{% static 'mainhome/main.css' %}">
+		<script   src="https://code.jquery.com/jquery-1.12.4.min.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+			 <div class="container-fluid">
+			 	<a class="navbar-brand" href="#">CrashCourseYou</a>
+			 	<ul class="nav navbar-nav navbar-right">
+			 		 <li><button class="navbar-btn ui button">Support</button></li>
+			 		 <li>
+						<div class="ui floating dropdown labeled search icon button">
+						  <i class="world icon"></i>
+						  <span class="text">Select Language</span>
+						  <div class="menu">
+						    <div class="item">Arabic</div>
+						    <div class="item">Chinese</div>
+						    <div class="item">Danish</div>
+						    <div class="item">Dutch</div>
+						    <div class="item">English</div>
+						    <div class="item">French</div>
+						    <div class="item">German</div>
+						    <div class="item">Greek</div>
+						    <div class="item">Hungarian</div>
+						    <div class="item">Italian</div>
+						    <div class="item">Japanese</div>
+						    <div class="item">Korean</div>
+						    <div class="item">Lithuanian</div>
+						    <div class="item">Persian</div>
+						    <div class="item">Polish</div>
+						    <div class="item">Portuguese</div>
+						    <div class="item">Russian</div>
+						    <div class="item">Spanish</div>
+						    <div class="item">Swedish</div>
+						    <div class="item">Turkish</div>
+						    <div class="item">Vietnamese</div>
+						  </div>
+						</div>
+			 		 </li>
+			 		 <li>
+						<div class="ui buttons">
+						  <button class="ui button" onclick="window.location='{% url 'members:index' %}?action_type=login';">Log In</button>
+						  <div class="or" data-text="OR"></div>
+						  <button class="ui positive button" onclick="window.location='{% url 'members:index' %}?action_type=signup';">Sign Up</button>
+						</div>
+			 		 </li>
+			 	</ul>
+			 </div>
+		</nav>
+		<header>
+			<div class="container-fluid hero">
+				<div class="learnteach">
+					<button class="ui left attached button"><i class="student icon" onclick="window.location='{% url 'members:index' %}';"></i> Learn</button>
+					<button class="right attached ui button"><i class="book icon" onclick="window.location='{% url 'members:index' %}';"></i> Teach</button>
+				</div>
+			</div>
+		</header>
+
+		<!-- Popular Courses -->
+		<section class="popular-courses">
+			<h2>Popular Courses</h2>
+			<div class="container-fluid">
+				<div class="row">
+				  <div class="col-sm-6 col-md-3">
+				    <div class="thumbnail">
+				    	<a class="ui blue ribbon label">Mathematics</a>
+				      <img src="http://placehold.it/220x350">
+				      <div class="caption">
+				        <h3>Learn Trigonometry</h3>
+				        <p>Steve Brown</p>
+				        <p><a href="#" class="btn btn-primary" role="button">Play Course</a> <a href="#" class="btn btn-default" role="button">Save</a></p>
+				      </div>
+				    </div>
+				  </div>
+				  <div class="col-sm-6 col-md-3">
+				    <div class="thumbnail">
+				    	<a class="ui red ribbon label">Programming</a>
+				      <img src="http://placehold.it/220x350">
+				      <div class="caption">
+				        <h3>Java + Spring Boot</h3>
+				        <p>Claude Jaime</p>
+				        <p><a href="#" class="btn btn-primary" role="button">Play Course</a> <a href="#" class="btn btn-default" role="button">Save</a></p>
+				      </div>
+				    </div>
+				  </div>
+				  <div class="col-sm-6 col-md-3">
+				    <div class="thumbnail">
+				    	<a class="ui teal ribbon label">Music</a>
+				      <img src="http://placehold.it/220x350">
+				      <div class="caption">
+				        <h3>DJ Techniques</h3>
+				        <p>Margaret Lindsay</p>
+				        <p><a href="#" class="btn btn-primary" role="button">Play Course</a> <a href="#" class="btn btn-default" role="button">Save</a></p>
+				      </div>
+				    </div>
+				  </div>
+				  <div class="col-sm-6 col-md-3">
+				    <div class="thumbnail">
+						<a class="ui red ribbon label">Programming</a>
+				      <img src="http://placehold.it/220x350">
+				      <div class="caption">
+				        <h3>Python & Django</h3>
+				        <p>John Smith</p>
+				       <p><a href="#" class="btn btn-primary" role="button">Play Course</a> <a href="#" class="btn btn-default" role="button">Save</a></p>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
+		</section>
+		<!-- Features -->
+		<section class="features">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6 col-sm-12">
+						<ul>
+							<li><i class="checkmark icon"></i> Earn money twice, teaching and sharing videos.</li>
+							<li><i class="checkmark icon"></i> Whiteboard.</li>
+							<li><i class="checkmark icon"></i> Webcam conference.</li>
+							<li><i class="checkmark icon"></i> Record and save videos to the cloud.</li>
+							<li><i class="checkmark icon"></i> Presentation.</li>
+							<li><i class="checkmark icon"></i> Desktop sharing.</li>
+							<li><i class="checkmark icon"></i> Chat.</li>
+							<li><i class="checkmark icon"></i> WebRTC audio.</li>
+						</ul>
+					</div>
+					<div class="col-md-6 col-sm-12">
+						<img src="http://placehold.it/500x300">
+					</div>
+				</div>
+
+			</div>
+		</section>
+		<section class="footer">
+			<p>All rights reserved <strong>@CrashCourseYou</strong> 2016-2017.</p>
+		</section>
+		<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.2/semantic.min.js" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			$('.ui.dropdown')
+			  .dropdown()
+			;
+		</script>
+	</body>
+</html>

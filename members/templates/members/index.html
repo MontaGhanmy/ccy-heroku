@@ -1,0 +1,184 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CrashCourseYou | {% if action_type == 'login' %}Log In{% endif %} {% if action_type == 'signup' %}Sign Up{% endif %}</title>
+		<!-- Loading the font -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<!-- Latest compiled and minified Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- Sementic UI CDN -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.2/semantic.min.css" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="{% static 'members/members.css' %}">
+		<script   src="https://code.jquery.com/jquery-1.12.4.min.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div class="header container-fluid">
+			<div class="row">
+				<div class="sitemap">
+					<div class="ui large breadcrumb">
+					  <a href="{% url 'mainhome:index' %}" class="section">Home</a>
+					  <i class="right chevron icon divider"></i>
+					  <a class="active section">Members</a>
+					</div>
+				</div>
+				<div class="languages ui floating dropdown labeled search icon button">
+				  <i class="world icon"></i>
+				  <span class="text">Select Language</span>
+				  <div class="menu">
+				    <div class="item">Arabic</div>
+				    <div class="item">Chinese</div>
+				    <div class="item">Danish</div>
+				    <div class="item">Dutch</div>
+				    <div class="item">English</div>
+				    <div class="item">French</div>
+				    <div class="item">German</div>
+				    <div class="item">Greek</div>
+				    <div class="item">Hungarian</div>
+				    <div class="item">Italian</div>
+				    <div class="item">Japanese</div>
+				    <div class="item">Korean</div>
+				    <div class="item">Lithuanian</div>
+				    <div class="item">Persian</div>
+				    <div class="item">Polish</div>
+				    <div class="item">Portuguese</div>
+				    <div class="item">Russian</div>
+				    <div class="item">Spanish</div>
+				    <div class="item">Swedish</div>
+				    <div class="item">Turkish</div>
+				    <div class="item">Vietnamese</div>
+				  </div>
+				</div>
+			</div>
+		</div>
+		<!-- Login/Signup -->
+		<section class="signinup">
+			{% if error_message %}
+			 <div class="ui message">
+			    <div class="header">{{ error_message }}</div>
+			  </div>
+			{% endif %}
+			<ul class="nav nav-tabs">
+				<li {% if action_type == 'login' %} class="active" {% endif %}><a data-toggle="tab" href="#login">Log In</a></li>
+				<li {% if action_type == 'signup' %} class="active" {% endif %}><a data-toggle="tab" href="#signup">Sign Up</a></li>
+			</ul>
+			<div class="tab-content">
+				<div id="login" class="tab-pane fade in {% if action_type == 'login' %}active{% endif %}">
+					<p><button class="fluid ui facebook button">
+						<i class="facebook icon"></i>
+						Login With Facebook
+					</button></p>
+					<p><button class="fluid ui twitter button">
+						<i class="twitter icon"></i>
+						Login With Twitter
+					</button></p>
+					<p><button class="fluid ui linkedin button">
+						<i class="linkedin icon"></i>
+						Continue With LinkedIn
+					</button></p>
+					<p><button class="fluid ui google plus button">
+						<i class="google plus icon"></i>
+						Google Plus
+					</button></p>
+					 <div class="ui horizontal divider">Or</div>
+					 <!-- Login Form -->
+					 <form class="ui form" method="post">
+					 	{% csrf_token %}
+						<div class="field">
+							<label>Username</label>
+							<input type="text" name="username" placeholder="Username">
+						</div>
+						<div class="field">
+							<label>Password</label>
+							<input type="password" name="password" placeholder="Password">
+						</div>
+						<div class="field">
+							<div class="ui checkbox">
+								<input type="checkbox" tabindex="0" class="hidden">
+								<label>Keep me logged in.</label>
+							</div>
+						</div>
+						<input type="hidden" name="formaction" value="login">
+						<button class="ui button" type="submit">Log In</button>
+					</form>
+					<p>Need Help ? <a href="#">I forgot my password.</a></p>
+				</div>
+				<div id="signup" class="tab-pane fade in {% if action_type == 'signup' %} active {% endif %}">
+					<p><button class="fluid ui facebook button">
+						<i class="facebook icon"></i>
+						Sign Up With Facebook
+					</button></p>
+					<p><button class="fluid ui twitter button">
+						<i class="twitter icon"></i>
+						Sign Up With Twitter
+					</button></p>
+					<p><button class="fluid ui linkedin button">
+						<i class="linkedin icon"></i>
+						Continue With LinkedIn
+					</button></p>
+					<p><button class="fluid ui google plus button">
+						<i class="google plus icon"></i>
+						Google Plus
+					</button></p>
+					 <div class="ui horizontal divider">Or</div>
+					 <!-- Signup form -->
+					 <form class="ui form" method="post">
+					 	{% csrf_token %}
+						<div class="field">
+							<label>Full Name</label>
+							<input type="text" name="username" placeholder="Full Name">
+						</div>
+						<div class="field">
+							<label>E-Mail</label>
+							<input type="text" name="email" placeholder="E-Mail">
+						</div>
+						<div class="field">
+							<label>Password</label>
+							<input type="password" name="password" placeholder="Password">
+						</div>
+						<div class="inline fields">
+							<div class="field">
+								<div class="ui radio checkbox">
+									<input type="radio" name="usertype" value="teacher" tabindex="0" class="hidden">
+									<label>Teacher</label>
+								</div>
+							</div>
+							<div class="field">
+								<div class="ui radio checkbox">
+									<input type="radio" name="usertype" value="student" tabindex="0" class="hidden">
+									<label>Student</label>
+								</div>
+							</div>
+							<div class="field">
+								<div class="ui radio checkbox">
+									<input type="radio" name="usertype"  value="both" tabindex="0" class="hidden">
+									<label>Both</label>
+								</div>
+							</div>
+						</div>
+						<input type="hidden" name="formaction" value="signup">
+						<button class="ui button" type="submit">Sign Up</button>
+					</form>
+					<p>By signing up to create an account I accept Crashcourseyou's <a href="#">Terms of use and Privacy Policy.</a></p>
+				</div>
+			</div>
+
+		</section>
+		<section class="footer">
+			<p>All rights reserved <strong>@CrashCourseYou</strong> 2016-2017.</p>
+		</section>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.2/semantic.min.js" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			$('.ui.dropdown')
+			  .dropdown()
+			;
+			$('.ui.checkbox')
+			  .checkbox()
+			;
+			$('.ui.radio.checkbox')
+			  .checkbox()
+			;
+		</script>
+	</body>
+</html>

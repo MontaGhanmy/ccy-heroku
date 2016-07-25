@@ -1,0 +1,53 @@
+html, body {
+	width: 100%;
+}
+body {
+	font-family: 'Roboto', sans-serif;
+}
+ul {
+	list-style: none;
+}
+.mainheader {
+	padding: 50px;
+}
+.mainheader .sitemap {
+	float: left;
+}
+.mainheader .languages {
+	float: right;
+}
+/** Overview **/
+.overview {
+	width: 80%;
+	margin: 20px auto;
+	padding: 15px;
+    border: 1px solid #ddd;
+}
+.my-options button {
+	margin: 20px 0px !important;
+}
+/** Main Wrapper **/
+.mainwrapper {
+	width: 80%;
+	margin: 0px auto;
+	text-align: left;
+}
+.tab-pane {
+	padding: 15px;
+    border: 1px solid #ddd;
+    border-top: none;
+} 
+.course .ui .item {
+	text-align: left;
+}
+.course {
+    position: relative;
+    border: 1px solid #E8E8E8;
+    border-radius: 5px;
+    padding: 5px;
+}
+/** Footer **/
+.footer {
+	text-align: center;
+	padding: 15px;
+}
